@@ -1,0 +1,413 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+    padding-top: 80px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #1b1b1b;
+    z-index: 1000;
+}
+
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    flex: 1;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: gold;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: transparent;
+    padding: 10px 18px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: gold;
+    border-color: gold;
+}
+.hero {
+    height: 100vh;
+    background: url("../images/hero.jpg") center center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: gold;
+    color: black;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: orange;
+}
+.menu {
+    padding: 100px 0;
+    background: #181818;
+}
+
+.menu h2 {
+    text-align: center;
+    font-size: 48px;
+    color: gold;
+    margin-bottom: 60px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background: #222;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: 24px;
+    margin: 20px;
+    color: #fff;
+}
+
+.card p {
+    margin: 0 20px;
+    color: #bdbdbd;
+    line-height: 1.5;
+}
+
+.card span {
+    display: block;
+    margin: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: gold;
+}
+
+.card button {
+    width: calc(100% - 40px);
+    margin: 0 20px 20px;
+    padding: 15px;
+    background: gold;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card button:hover {
+    background: #f5c400;
+}
+
+@media (max-width: 1200px) {
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu h2 {
+        font-size: 36px;
+    }
+
+    .card h3 {
+        font-size: 20px;
+    }
+}
+
+#cart-btn {
+    background: gold;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cart {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 400px;
+    height: 100%;
+    background: #222;
+    transition: .3s;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart.active {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #111;
+}
+
+#close-cart {
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+#cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.cart-footer {
+    padding: 20px;
+    border-top: 1px solid #444;
+}
+
+#checkout {
+    width: 100%;
+    padding: 15px;
+    background: gold;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.cart-item {
+    background: #333;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.cart-item h4 {
+    margin-bottom: 10px;
+}
+
+.cart-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.cart-controls button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: gold;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.cart-controls strong {
+    color: gold;
+}
+.checkout {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+}
+
+.checkout.active {
+    display: flex;
+}
+
+.checkout-content {
+    width: 400px;
+    background: #222;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.checkout-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.checkout-content input,
+.checkout-content select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+#confirm-order,
+#close-order {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#confirm-order {
+    background: gold;
+    color: black;
+}
+
+#close-order {
+    background: #555;
+    color: white;
+}
+#card-fields {
+    display: block;
+}
+
+#card-fields input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+}
+.contacts {
+    padding: 100px 0;
+    background: #181818;
+}
+
+.contacts h2 {
+    text-align: center;
+    font-size: 48px;
+    color: gold;
+    margin-bottom: 50px;
+}
+
+.contacts-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info h3 {
+    margin-bottom: 20px;
+    color: gold;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.map {
+    flex: 1;
+    min-width: 300px;
+}
+
+.map iframe {
+    border-radius: 15px;
+}
